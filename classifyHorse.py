@@ -17,8 +17,7 @@ def readPhrases():
         except ValueError:
             data = {}
     data = dict(data)
-    for key in data.iterkeys():
-        key = int(key)
+    f.close()
 
 
 def build_advice_dict():
