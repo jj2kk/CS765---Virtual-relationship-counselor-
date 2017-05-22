@@ -18,10 +18,6 @@ def readPhrases():
 
 def classify_text():
 
-    print(data)
-    print(data[1])
-
-
 
 
 main()
