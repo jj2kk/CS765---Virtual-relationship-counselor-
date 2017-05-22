@@ -10,7 +10,7 @@ horsemen
 
 import json
 
-def main():
+def main(): 
     horse_dictionary = readscript()
     write_horsemen(horse_dictionary)
 
