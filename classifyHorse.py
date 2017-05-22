@@ -13,10 +13,19 @@ def readPhrases():
         except ValueError:
             data = {}
     data = dict(data)
-    for key in data.iterkeys():
-        key = int(key)
+    f.close()
 
 def classify_text():
+    personA = [0,0,0,0]
+    personB = [0,0,0,0]
+    filename = input("please enter filename: "+"txt")
+    for lines in filename:
+        '''
+        Assign each line to a person
+        evaluate each line and update the person's score for each horseman
+        '''
+
+
 
 
 
