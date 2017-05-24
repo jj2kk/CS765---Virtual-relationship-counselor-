@@ -29,8 +29,12 @@ def build_advice_dict():
 #classify the text
 #iterate through the dictionary of horsemen. return the horseman if it has a
 #phrase that matches the sentence as substring
-def classify_text(sentence):
-
+def classify_text(sentence, horsemen_dict):
+    for key in horsemen_dict.keys():
+        for phrase in horsemen_dict[key]:
+            #print(phrase)
+            if phrase in sentence:
+                return key
     return 0
 
 #find the highest horseman in the user list, and also their percentage
@@ -79,28 +83,14 @@ def get_sentences_for_horseman(userList, userHorsemen, horseman):
 
 def initiate_agent(horsemen_dict):
     #agent talks to user. "please enter your name and your partner's name" "ask for convo log"
-<<<<<<< HEAD
-    userName = input("Hi there, what's your name?")
-    partnerName = input("Nice to meet you " + userName + ". What is your partner's name? ")
-    convoFileName = input("Please enter the filename for the conversation log between you and " + partnerName + " you would like me to analyse. ")
-    with open(convoFileName + '.txt', 'r') as f:
-        convo = f.readlines()
-        print(convo)
-=======
     userName = input("Hi there, what's your name? ")
     partnerName = input("Nice to meet you " + userName + ". What is your partner's name? ")
     convoFileName = input("Please enter the filename for the conversation log between you and " + partnerName + " you would like me to analyse. ")
->>>>>>> Helen
 
     # initiate a list for each person based on user input
     userList = []
     partnerList = []
 
-<<<<<<< HEAD
-
-        #initiate a list for each person based on user input
-=======
->>>>>>> Helen
     #read convo log and put each sentence into corresponding person's list (based on first character/word)
     with open(convoFileName + '.txt', 'r') as f:
         convo = f.readlines()
@@ -122,10 +112,10 @@ def initiate_agent(horsemen_dict):
 
     #go through each list and use classify_text() gets us a number for each phrase (number representing the horseman)
     for sentence in userList:
-        userHorsemen.append(classify_text(sentence))
+        userHorsemen.append(classify_text(sentence, horsemen_dict))
 
     for sentence in partnerList:
-        partnerHorsemen.append(classify_text(sentence))
+        partnerHorsemen.append(classify_text(sentence, horsemen_dict))
 
     #find the horseman with highest frequency and set that as the result for that person. also calculate the percentage
     userResult = classify_horseman(userHorsemen)
