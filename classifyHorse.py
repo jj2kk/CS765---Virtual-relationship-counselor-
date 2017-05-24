@@ -4,7 +4,7 @@ def main():
     advice_dict = build_advice_dict()
     horsemen_dict = readPhrases()
     
-    horseman_result = initiate_agent()
+    horseman_result = initiate_agent(horsemen_dict)
     give_advice(horseman_result, advice_dict)
 
 #reading the dictionary of the four horsemen
@@ -17,9 +17,8 @@ def readPhrases():
         except ValueError:
             data = {}
     data = dict(data)
-    for key in data.iterkeys():
-        key = int(key)
-
+    print(data)
+    return data
 
 def build_advice_dict():
     #{0: general advice etc etc
@@ -34,16 +33,19 @@ def classify_text(sentence):
     return 0
     
 def classify_horseman(person_speech_list):
+    return
 
-
-def initiate_agent():
+def initiate_agent(horsemen_dict):
     #agent talks to user. "please enter your name and your partner's name" "ask for convo log"
+    print("Hi! What is your name?")
+
 
     #initiate a list for each person based on user input
     #read convo log and put each sentence into corresponding person's list (based on first character/word)
     #go through each list and use classify_text() gets us a number for each phrase (number representing the horseman)
     #find the horseman with highest frequency and set that as the result for that person. also calculate the percentage
-    classify_horseman()
+
+    #classify_horseman()
     
     #result: return a list of lists for each couple, and their horseman result, their percentage of that horseman,
     #and sentences that follow that horseman
@@ -52,6 +54,6 @@ def initiate_agent():
 #POTENTIALLY: we can ask more questions here
 #use the advice dictionary and print out advices
 def give_advice(result, advice_dict):
-    
+    return
 
 main()

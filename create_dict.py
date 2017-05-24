@@ -7,10 +7,9 @@ horsemen
 4 - stonewalling
 0 - unclassified
 """
-
 import json
 
-def main(): 
+def main():
     horse_dictionary = readscript()
     write_horsemen(horse_dictionary)
 
